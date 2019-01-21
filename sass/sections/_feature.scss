@@ -1,0 +1,16 @@
+.section-feature{
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom,
+     rgba(0, 70, 4, 0.404),
+     rgba(15, 112, 17, 0.396), 
+     rgba(33, 157, 33, 0.337), 
+     rgba(51, 205, 51, 0.33), 
+     rgba(70, 255, 70, 0.33)),
+     url(../img/banff.jpg);
+     background-size: cover;
+     transform: skewY(-3deg);
+    margin-top: -4rem;
+     & > * {
+         transform: skewY(3deg);
+     }
+}

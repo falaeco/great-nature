@@ -1,0 +1,25 @@
+
+/* TODO: Maybe change to dark? */
+.section-about{
+    background-color: $almost-white-2;
+    padding: 15rem 2rem;
+
+    &__flexbox{
+        // display: flex;
+        // justify-content: space-around;
+        // align-items: center;
+        // max-width: 114rem;
+        // margin: 0 auto;
+
+        &__text{
+            margin-right: 5rem;
+        }
+
+        &__photo{
+            position: relative;
+            flex-basis: 45%;
+            flex-shrink: 0;
+            height: 100%;
+        }
+    }
+}

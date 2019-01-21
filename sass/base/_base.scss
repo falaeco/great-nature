@@ -1,0 +1,30 @@
+/* reset and normalization defined here */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%;
+    
+    // Increase and reduce font-size for smaller screens
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port){
+        font-size: 50%;
+    }
+
+    @include respond(large-desktop){
+        font-size: 75%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+}

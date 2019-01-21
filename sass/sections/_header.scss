@@ -1,0 +1,36 @@
+$opacity: 0.6;
+
+header{
+    position: relative;
+    height: 60vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($green-0, $opacity),
+        rgba($green-1, $opacity),
+        rgba($green-2, $opacity),
+        rgba($green-3, $opacity)),
+    url(../img/koubi-nationalpark.jpg);
+    background-size: cover;
+}
+
+.header__logo-box{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 1;
+}
+
+.header__logo{
+    height: 35px;
+}
+
+.header__textbox{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+/* Header Background */
+

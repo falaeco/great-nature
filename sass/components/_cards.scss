@@ -1,0 +1,149 @@
+$card-height: 50rem;
+
+.card {
+    // BASE
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    width: 30%;
+    height: $card-height;
+    margin: 0 2rem;
+
+    &__side{
+        font-size: 2rem;
+        height: $card-height;
+        transition: all 1.2s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($black, .15);
+        //Make the back invisible;
+        backface-visibility: hidden;
+
+        &--front {
+            background-color: $white;
+        }
+
+        &--back {
+            // Back is the rotated card at 180deg
+            transform: rotateY(180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $blue-1, $blue-2);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $green-1, $green-3);
+            }
+
+            &-3{
+                background-image: linear-gradient(to right bottom, $pink-1, $pink-2, $pink-3);
+            }
+        }
+    }
+
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back{
+        //Rotate it back to 0 deg
+        transform: rotateY(0deg);
+    }
+
+
+    // FRONT SIDE STYLING
+
+    &__picture{
+        background-size: cover;
+        background-blend-mode: soft-light;
+        height: 33rem;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &-1{
+            background-position: bottom;
+            background-image: linear-gradient(to right bottom, $blue-1, $blue-2), url(../img/canoe.jpg);
+        }
+
+        &-2{
+            background-position: bottom right;
+            background-image: linear-gradient(to right bottom, $green-1, $green-3), url(../img/hike.jpeg);
+        }
+
+        &-3{
+            background-position: 58%;
+            background-image: linear-gradient(to right bottom, $pink-1, $pink-2, $pink-3), url(../img/polar-bear.jpg);
+        }
+    }
+
+    &__heading{
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: white;
+        position: absolute;
+        top: 25rem;
+        right: 2rem;
+        width: 60%;
+        line-height: 4.6rem;
+    }
+
+    &__heading-span {
+        padding: 2px 1.5rem;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+
+        &-1 {
+            background-image: linear-gradient(to right bottom, rgba($blue-1, .7), rgba($blue-2, .7));
+        }
+
+        &-2{
+            background-image: linear-gradient(to right bottom, rgba($green-1, .7), rgba($green-3, .7));
+        }
+
+        &-3{
+            background-image: linear-gradient(to right bottom, 
+            rgba($pink-1, .7), 
+            rgba($pink-2, .7), 
+            rgba($pink-3, .7));
+        }
+    }
+
+    &__details{
+        padding: 2rem;
+    }
+
+    //BACK STYLING
+    &__cta{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+    }
+
+    &__price-box {
+        text-align: center;
+        color: white;
+        margin-bottom: 8rem;
+    }
+
+    &__price-only {
+        font-family: $Oswald;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+
+        & .dollar {
+            font-size: 4rem;
+        }
+    }
+} 
